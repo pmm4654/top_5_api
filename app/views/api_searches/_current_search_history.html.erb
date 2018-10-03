@@ -1,5 +1,5 @@
 <% if current_search.present? %>
-  <table>
+  <table id="search_history_table">
     <thead>
       <th><%= t('api_searches.index.searched_on') %></th>
     </thead>
@@ -12,3 +12,10 @@
     <% end %>
   </table>
 <% end %>
+
+<script>
+$(document).ready(function() {
+    $('#search_history_table').DataTable();
+});
+  
+</script>
