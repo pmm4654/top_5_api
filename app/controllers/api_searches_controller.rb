@@ -15,7 +15,9 @@ class ApiSearchesController < ApplicationController
 
   private
     def set_top_5_api_searches
-      @api_searches = ApiSearch.with_versions.limit(5).order('version_count desc')
+      @api_searches = ApiSearch.top_5_by_count unless params[:search_count_sort] || params[:user_input_sort]
+      @api_searches = ApiSearch.top_5_by_count(params[:search_count_sort]) if params[:search_count_sort]
+      @api_searches = ApiSearch.top_5_by_search_term(params[:user_input_sort]) if params[:user_input_sort]
     end
 
     def render_js_results(api_search_tracker)
