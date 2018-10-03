@@ -30,4 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  search: 'Search'
+  results: 'Results'
+
+  api_searches:
+    index:
+      past_searches: 'Top 5 Searches'
+      user_input: 'Title:'
+      last_searched: 'Last Search'
+      header: 'Search for Movies'
+      search_term_history: 'Search term history:'
+      current_search: 'Current Search:'
+      
