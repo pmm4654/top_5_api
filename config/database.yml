@@ -27,4 +27,4 @@ test:
 
 production:
   <<: *default
-  database: top_5_api_production
+  uri: ENV['DATABASE_URL']
