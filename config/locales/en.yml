@@ -41,4 +41,7 @@ en:
       header: 'Search for Movies'
       search_term_history: 'Search term history:'
       current_search: 'Current Search:'
+      searched_on: 'Searched On:'
+    errors:
+      could_not_save_result: 'Something went wrong and we could not save your search result.'
       
