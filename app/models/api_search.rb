@@ -6,16 +6,14 @@ class ApiSearch < ApplicationRecord
   end
 
   scope :top_5_searches, -> { with_versions.limit(5) }
+
   scope :top_5_by_count, -> (direction = 'desc') do 
     top_5_searches.order("version_count #{direction}")
   end
+
   scope :top_5_by_search_term, -> (direction = 'desc') do 
     top_5_searches.order("user_input #{direction}")
   end
-
-  scope :top_5_by_date, -> (direction = 'desc') do 
-    top_5_searches.order("versions.created_at #{direction}")
-  end  
 
   has_paper_trail
 end
