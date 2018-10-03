@@ -6,7 +6,9 @@
 <% content_for(:sidebar_left) do %>
   <h3><%= t('.past_searches') %></h3>
   <br>
-  <%= render partial: 'api_searches_table', locals: { api_searches: @api_searches } %>
+  <div id="api_searches_table_wrapper">
+    <%= render partial: 'api_searches_table', locals: { api_searches: @api_searches } %>
+  </div>
 <% end %>
 
 <div id="main_content_grid_wrapper">

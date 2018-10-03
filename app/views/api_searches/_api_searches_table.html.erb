@@ -1,24 +1,22 @@
-<div id="api_searches_table_wrapper">
-  <table id=api_searches_table>
-    <thead>
-      <th>
-        <%= link_to t('api_search_table.user_input'), api_searches_path(user_input_sort: search_option(params[:user_input_sort])) %>
-      </th>
-      <th>
-        <%= link_to t('api_search_table.search_count'), api_searches_path(search_count_sort: search_option(params[:search_count_sort])) %> 
-      </th>
-    </thead>
-    <tbody>
-      <% api_searches.each do |api_search| %>
-      <tr>
-        <td>
-          <%= link_to api_search.user_input, api_searches_path(api_search: {user_input: api_search.user_input}), remote: true, method: :post %>
-        </td>
-        <td>
-          <%= api_search.version_count %>    
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<table id=api_searches_table>
+  <thead>
+    <th>
+      <%= link_to t('api_search_table.user_input'), api_searches_path(user_input_sort: search_option(params[:user_input_sort])), remote: true %>
+    </th>
+    <th>
+      <%= link_to t('api_search_table.search_count'), api_searches_path(search_count_sort: search_option(params[:search_count_sort])), remote: true %> 
+    </th>
+  </thead>
+  <tbody>
+    <% api_searches.each do |api_search| %>
+    <tr>
+      <td>
+        <%= link_to api_search.user_input, api_searches_path(api_search: {user_input: api_search.user_input}), remote: true, method: :post %>
+      </td>
+      <td>
+        <%= api_search.version_count %>    
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
