@@ -1,0 +1,2 @@
+class ApiSearch < ApplicationRecord
+end
