@@ -6,12 +6,12 @@
 <% content_for(:sidebar_left) do %>
   <h3><%= t('.past_searches') %></h3>
   <br>
-  <%= render 'api_searches_table', api_searches: @api_searches %>
+  <%= render partial: 'api_searches_table', locals: { api_searches: @api_searches } %>
 <% end %>
 
 <div id="main_content_grid_wrapper">
   <div id="api_search_form">
-    <%= render 'form', api_search: ApiSearch.new %>
+    <%= render partial: 'form', locals: { api_search: ApiSearch.new } %>
   </div>
   <div id="api_past_searches">
     <p><%= t('.search_term_history') %></p>
