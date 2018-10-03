@@ -1,0 +1,14 @@
+<% if current_search.present? %>
+  <table>
+    <thead>
+      <th><%= t('api_searches.index.searched_on') %></th>
+    </thead>
+    <% current_search.versions.order('created_at desc').each do |version| %>
+      <tr>
+        <td>
+          <%= l(version.created_at, format: :short) %>
+        </td>
+      </tr>  
+    <% end %>
+  </table>
+<% end %>

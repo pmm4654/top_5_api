@@ -8,7 +8,7 @@
       <% api_searches.each do |api_search| %>
       <tr>
         <td>
-          <%= api_search.user_input %>
+          <%= link_to api_search.user_input, api_searches_path(api_search: {user_input: api_search.user_input}), remote: true, method: :post %>
         </td>
         <td>
           <%= api_search.version_count %>    

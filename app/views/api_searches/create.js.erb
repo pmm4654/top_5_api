@@ -1,0 +1,6 @@
+$('#api_searches_table_wrapper').html('<%= j render 'api_searches_table', api_searches: @api_searches %>');
+$('#api_search_user_input').val('');
+$('#api_search_results_display').html('<%= j render 'search_results', search_results: @search_results.response_data.fetch(:body, {}) %>')
+$('#current_search').html('<%= @search_results.response_data.fetch(:user_input, {}) %>');
+$('#current_search_history').html('<%= j render 'current_search_history', current_search: @search_results.last_search %>');
+
