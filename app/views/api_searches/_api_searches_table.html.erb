@@ -1,0 +1,20 @@
+<div id="api_searches_table_wrapper">
+  <table id=api_searches_table>
+    <thead>
+      <th><%= t('api_search_table.user_input') %></th>
+      <th><%= t('api_search_table.search_count') %></th>
+    </thead>
+    <tbody>
+      <% api_searches.each do |api_search| %>
+      <tr>
+        <td>
+          <%= api_search.user_input %>
+        </td>
+        <td>
+          <%= api_search.version_count %>    
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

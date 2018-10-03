@@ -1,0 +1,25 @@
+<% content_for(:page_header) do %>
+  <h1><%= t('.header') %></h1>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<% content_for(:sidebar_left) do %>
+  <h3><%= t('.past_searches') %></h3>
+  <br>
+  <%= render 'api_searches_table', api_searches: @api_searches %>
+<% end %>
+
+<div id="main_content_grid_wrapper">
+  <div id="api_search_form">
+    <%= render 'form', api_search: ApiSearch.new %>
+  </div>
+  <div id="api_past_searches">
+    <p><%= t('.search_term_history') %></p>
+    <p><b><%= t('.current_search') %></b> <span id="current_search">-</span></p>
+    <p id="current_search_history"></p>
+  </div>
+  <div id="api_search_results">
+    <p><%= t('results') %></p>
+    <div id="api_search_results_display"></div>
+  </div>
+</div>
